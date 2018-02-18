@@ -1,8 +1,24 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import './style.css'
 
-export default class App extends Component {
+class App extends Component {
 	render() {
-		return <div>Ублюдок, мать твою! А ну иди сюда, говно собачье, жлоб вонючий!</div>
+		const {name, lastName, age} = this.props.user
+
+		return (
+			<div>
+				<p>Привет, {name} {lastName}. Я хочу сыграть с тобой в игру.</p>
+				<p>Тебе уже {age} и время умирать!</p>
+			</div>
+		)
 	}
 }
+
+function mapStateToProps (state) {
+	return {
+		user: state
+	}
+}
+
+export default connect(mapStateToProps)(App)

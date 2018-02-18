@@ -4,7 +4,7 @@
   "description": "Redux RU tutorial",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "start http://localhost:3000/ & node server.js"
   },
   "author": "Korsap",
   "license": "ISC",
@@ -27,6 +27,8 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-hot-loader": "^3.1.3",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
     "style-loader": "^0.20.2",
     "webpack": "^3.11.0",
     "webpack-dev-middleware": "^2.0.5",
