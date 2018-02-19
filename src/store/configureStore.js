@@ -1,14 +1,15 @@
 import { createStore } from 'redux'
 import rootReducer from '../reducers'
 
-export default function configureStore (initialState) {
-    const store = createStore(rootReducer, initialState);
+export default function configureStore(initialState) {
+    const store = createStore(rootReducer, initialState)
 
     if (module.hot) {
-        module.hot.accept('../reducers', () => {
-            const nextRootReducer = require('../reducers').default;
-            store.replaceReducer(nextRootReducer)
+        module.hot.accept('../reducers', () =>{
+            const nextRootStore = require('../reducers').default
+            store.replaceReducer(nextRootStore)
         })
     }
+
     return store
 }

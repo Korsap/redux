@@ -14,6 +14,7 @@ const render = Component => {
 			<Provider store={store}>
 				<Component/>
 			</Provider>
+
 		</AppContainer>,
 		document.getElementById('root'),
 	)
