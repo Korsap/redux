@@ -3,12 +3,12 @@ const webpack = require('webpack');
 const YarnAddWebpackPlugin = require('yarn-add-webpack-plugin');
 
 module.exports = {
-	devtool: "cheap-module-eval-source-map",
+	devtool: 'cheap-module-eval-source-map',
 	entry: [
-		"webpack-hot-middleware/client",
+		'webpack-hot-middleware/client',
 		'react-hot-loader/patch',
-		"babel-polyfill",
-		"./src/index"
+		'babel-polyfill',
+		'./src/index'
 	],
 	module: {
 		rules: [
@@ -17,7 +17,7 @@ module.exports = {
                 enforce: 'pre',
                 exclude: /(node_modules|bower_components)/,
                 include: [
-                    path.resolve(__dirname, "src")
+                    path.resolve(__dirname, 'src')
                 ],
                 loader: 'eslint-loader'
 			},
@@ -25,7 +25,7 @@ module.exports = {
 				test: /\.js$/,
 				exclude: /(node_modules|bower_components)/,
 				include: [
-					path.resolve(__dirname, "src")
+					path.resolve(__dirname, 'src')
 				],
 				use: {
 					loader: 'babel-loader',
@@ -38,7 +38,7 @@ module.exports = {
 				test: /\.css$/,
                 exclude: /(node_modules|bower_components)/,
                 include: [
-                    path.resolve(__dirname, "src")
+                    path.resolve(__dirname, 'src')
                 ],
                 use: ['style-loader', 'css-loader']
             }
@@ -53,7 +53,7 @@ module.exports = {
 	],
 	output: {
 		path: path.join(__dirname, 'dist'),
-		filename: "bundle.js",
-		publicPath: "/static"
+		filename: 'bundle.js',
+		publicPath: '/static'
 	}
 }
