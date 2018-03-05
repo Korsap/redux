@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import User from '../components/User'
 import Page from '../components/Page'
-import './style.css'
+import * as pageActions from '../actions/PageActions'
 
 class App extends Component {
 	render() {
-		const {user, page} = this.props
+		const {user, page} = this.props;
+        const {getPhotos} = this.props.pageActions
 		return (
 			<div>
 				<User user={user}/>
-				<Page page={page}/>
+				<Page page={page} getPhotos={getPhotos}/>
 			</div>
 		)
 	}
@@ -23,4 +25,10 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps)(App)
+function mapDispatchToProps(dispatch) {
+	return {
+		pageActions: bindActionCreators(pageActions, dispatch)
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
