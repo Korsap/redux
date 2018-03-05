@@ -7,7 +7,7 @@ export default class Page extends Component {
 		page: PropTypes.shape({
 			year: PropTypes.number.isRequired,
 			photos: PropTypes.array.isRequired,
-			setYear: PropTypes.func.isRequired
+			getPhotos: PropTypes.func.isRequired
 			})
 	}
 
@@ -31,6 +31,6 @@ export default class Page extends Component {
 	}
 
 	onYearBtnClick = (e) => {
-		this.props.setYear(+e.target.innerText)
+		this.props.getPhotos(+e.target.innerText)
 	}
 }
