@@ -6,9 +6,9 @@ export default class Page extends Component {
 	static propTypes = {
 		page: PropTypes.shape({
 			year: PropTypes.number.isRequired,
-			photos: PropTypes.array.isRequired,
-			getPhotos: PropTypes.func.isRequired
-			})
+			photos: PropTypes.array.isRequired
+		}),
+		getPhotos: PropTypes.func.isRequired
 	}
 
 	render() {
