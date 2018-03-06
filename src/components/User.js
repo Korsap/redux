@@ -12,11 +12,12 @@ export default class User extends Component {
 	}
 
 	render() {
-        const {user} = this.props
+        const {user, handleLogin} = this.props
 		let template
 
-		if(user.name) {template  = <p>Привет, {user.name} {user.lastName}</p>
-		} else {template = <button className='btn' onClick={this.props.handleLogin}>Войти</button>}
+		if(user.name) {template = <p>Привет, {user.name} {user.lastName}</p>
+		} else {template = <button className='btn' onClick={handleLogin}>Войти</button>}
+
         return (
             <div className='ib user'>
 				{template}
